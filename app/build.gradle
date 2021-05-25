@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.application'
+}
+
+def serverPropertiesFile = rootProject.file("server.properties")
+def serverProperties = new Properties()
+serverProperties.load(new FileInputStream(serverPropertiesFile))
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.jointree.wifilist"
+        minSdkVersion 28
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // xml file
+        resValue "string", "SERVER_URL", serverProperties['SERVER_URL']
+
+        // java file
+        buildConfigField("String", "SERVER_URL", serverProperties['SERVER_URL'])
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    viewBinding{
+        enabled=true
+    }
+
+    allprojects {
+        repositories {
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
+}
+
+dependencies {
+    implementation 'com.github.pedroSG94:AutoPermissions:1.0.3' //autopermission
+    // Retrofit 라이브러리
+    implementation 'com.squareup.retrofit2:retrofit:2.6.4'
+
+    // Gson 변환기 라이브러리
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.4'
+
+    // Scalars 변환기 라이브러리
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
+//    Okhttp 로깅 인터셉터
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+//    Volley 라이브러리 deprecated
+//    implementation 'com.android.volley:volley:1.1.1'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0' //recyclerview
+
+    //    Okhttp 선언
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+
+//    FCM 속도
+    implementation 'androidx.work:work-runtime:2.3.3'
+
+    //FCM Push Example 설정 추가
+    implementation platform('com.google.firebase:firebase-bom:26.5.0')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // google map api & location
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+
+//   실시간 그래프 mpandroid chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.0'
+
+//    Room 로컬 데이터베이스
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // optional - RxJava2 support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - RxJava3 support for Room
+    implementation "androidx.room:room-rxjava3:$room_version"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+apply plugin: 'com.google.gms.google-services'

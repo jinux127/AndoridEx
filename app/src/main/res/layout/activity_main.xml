@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="443dp"
+        android:layout_height="263dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_bluetoothScan"
+            android:layout_width="133dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:onClick="clickWifiScan"
+            android:text="WIFI SCAN"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_countReset" />
+
+        <EditText
+            android:id="@+id/et_roomName"
+            android:layout_width="176dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="27dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/et_personName"
+            app:layout_constraintEnd_toEndOf="@+id/et_personName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_personName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_count" />
+
+        <EditText
+            android:id="@+id/et_personName"
+            android:layout_width="174dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/et_personTel"
+            app:layout_constraintEnd_toEndOf="@+id/et_personTel"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/et_personTel"
+            app:layout_constraintTop_toBottomOf="@+id/et_roomName" />
+
+        <EditText
+            android:id="@+id/et_personTel"
+            android:layout_width="177dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:maxLength="13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_PersonNumber"
+            app:layout_constraintTop_toBottomOf="@+id/et_personName" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="73dp"
+            android:layout_height="37dp"
+            android:text="대상자 이름"
+            app:layout_constraintBottom_toBottomOf="@+id/et_personName"
+            app:layout_constraintEnd_toEndOf="@+id/tv_PersonNumber"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_PersonNumber"
+            app:layout_constraintTop_toBottomOf="@+id/et_roomName"
+            app:layout_constraintVertical_bias="0.705" />
+
+        <TextView
+            android:id="@+id/tv_roomName"
+            android:layout_width="60dp"
+            android:layout_height="42dp"
+            android:text="방이름"
+            app:layout_constraintBottom_toBottomOf="@+id/et_roomName"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/et_roomName"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_PersonNumber"
+            android:layout_width="64dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:text="전화번호"
+            app:layout_constraintBottom_toBottomOf="@+id/et_personTel"
+            app:layout_constraintEnd_toStartOf="@+id/et_personTel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_personTel"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="124dp"
+            android:layout_height="36dp"
+            android:text="TextView"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_roomName"
+            app:layout_constraintEnd_toStartOf="@+id/btn_test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_countReset"
+            android:layout_width="131dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="clickReset"
+            android:text="새로운 방 등록하기"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_bluetoothScan"
+            app:layout_constraintEnd_toEndOf="@+id/btn_bluetoothScan"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_bluetoothScan" />
+
+        <Button
+            android:id="@+id/btn_locationScan"
+            android:layout_width="129dp"
+            android:layout_height="38dp"
+            android:onClick="clickLocationScan"
+            android:text="타니모토"
+            app:layout_constraintBottom_toTopOf="@+id/btn_countReset"
+            app:layout_constraintEnd_toEndOf="@+id/btn_countReset"
+            app:layout_constraintStart_toStartOf="@+id/btn_countReset" />
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="130dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="30dp"
+            android:onClick="clickLocationScan2"
+            android:text="위치 측정"
+            app:layout_constraintBottom_toTopOf="@+id/btn_locationScan"
+            app:layout_constraintEnd_toEndOf="@+id/btn_locationScan"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_locationScan"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="422dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

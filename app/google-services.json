@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "512322741268",
+    "project_id": "wifilist-e1bc4",
+    "storage_bucket": "wifilist-e1bc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512322741268:android:1059334dd437b9ec5db301",
+        "android_client_info": {
+          "package_name": "com.jointree.wifilist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512322741268-kfpnr2iqb4vdhet9g0pb52cph11k8tbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCvmCohJ7qwDFqDtp9vKR8P5a7Ne2Kgyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512322741268-kfpnr2iqb4vdhet9g0pb52cph11k8tbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
